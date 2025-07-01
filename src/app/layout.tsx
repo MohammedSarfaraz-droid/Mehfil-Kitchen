@@ -8,8 +8,8 @@ const josefin = Josefin_Sans({
 })
 
 export const metadata = {
-  title: 'Your App',
-  description: 'Your Description',
+  title: 'Mehfil Kitchen',
+  description: 'At Mehfil Kitchen we offer meals of excellent quality and invite you to try our delicious food.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
