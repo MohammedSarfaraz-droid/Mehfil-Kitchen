@@ -1,0 +1,134 @@
+export default function MenuSection() {
+    const [activeFilter, setActiveFilter] = useState("*");
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const filteredItems = activeFilter === "*" 
+        ? menuItems 
+        : menuItems.filter(item => item.categories.includes(activeFilter));
+
+    // Hide scrollbar completely
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.style.overflow = "hidden";
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (containerRef.current.style as any).msOverflowStyle = "none";  // IE/Edge
+            containerRef.current.style.scrollbarWidth = "none";  // Firefox
+        }
+    }, []);
+
+    return (
+        <section className="w-full py-16 px-4">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[#1a3c34]">
+                        Our Menu
+                    </h2>
+                    <p className="text-gray-700 text-base max-w-2xl mx-auto">
+                        Explore our rich and authentic Hyderabadi cuisine made with fresh
+                        ingredients and traditional recipes.
+                    </p>
+                </div>
+
+                {/* Filter Buttons */}
+                <div className="flex flex-wrap justify-center gap-2 mb-10">
+                    {filters.map((filter) => (
+                        <motion.button
+                            key={filter.value}
+                            onClick={() => setActiveFilter(filter.value)}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={`px-4 py-2 min-w-[100px] text-sm border border-[#e6d38d] rounded-full transition-all duration-200 ${
+                                activeFilter === filter.value 
+                                    ? 'bg-[#e6d38d] shadow-md' 
+                                    : 'hover:bg-[#e6d38d] hover:text-black'
+                            }`}
+                        >
+                            {filter.label}
+                        </motion.button>
+                    ))}
+                </div>
+
+                {/* Scrollable Container (without visible scrollbar) */}
+                <div 
+                    ref={containerRef}
+                    className="flex justify-center overflow-y-scroll h-[70vh] relative"
+                    style={{
+                        scrollbarWidth: "none",  // Firefox
+                        msOverflowStyle: "none",  // IE/Edge
+                    }}
+                >
+                    {/* Custom scrollbar hide for WebKit browsers */}
+                    <style jsx>{`
+                        div::-webkit-scrollbar {
+                            display: none;
+                            width: 0;
+                            height: 0;
+                            background: transparent;
+                        }
+                    `}</style>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center max-w-fit pb-8">
+                        <AnimatePresence>
+                            {filteredItems.map((item) => (
+                                <motion.div
+                                    key={item.title}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ 
+                                        opacity: 1, 
+                                        y: 0,
+                                        transition: { 
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 20,
+                                            duration: 0.5
+                                        }
+                                    }}
+                                    viewport={{ once: false, margin: "0px 0px -100px 0px" }}
+                                    className="w-full max-w-[340px] mb-4 md:mb-8"
+                                >
+                                    {/* Image with price tag */}
+                                    <div className="relative flex justify-center p-4">
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            width={380}
+                                            height={373}
+                                            className="w-full h-auto max-w-[380px] rounded-[5%] object-cover"
+                                            priority={false}
+                                            loading="lazy"
+                                        />
+                                        <motion.div 
+                                            whileHover={{ scale: 1.05 }}
+                                            className="absolute bottom-6 right-6 bg-white text-black font-semibold px-3 py-2 md:px-4 md:py-2 rounded shadow text-sm md:text-base"
+                                        >
+                                            ${item.price}
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className="text-xl md:text-2xl font-semibold text-black mt-6 md:mt-9 mb-4">
+                                        {item.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className="text-base leading-6 text-black mb-6 md:mb-8">
+                                        {item.description}
+                                    </p>
+
+                                    {/* Order Now Button */}
+                                    <Link
+                                        href={`/checkout?item=${encodeURIComponent(item.title)}`}
+                                        className="inline-block text-sm md:text-base font-semibold text-black px-6 md:px-10 py-3 md:py-4 border-2 border-[#1a3c34] rounded transition-all duration-200 hover:bg-[#1a3c34] hover:text-white mb-6"
+                                    >
+                                        Order Now!
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}  
