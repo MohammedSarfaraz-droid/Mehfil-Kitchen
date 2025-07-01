@@ -39,10 +39,10 @@ export default function Navbar() {
               href={text === 'Home' ? '/' : `/${text.toLowerCase()}`}
               className="relative group"
             >
-              <span className="text-white">
-              {text}
-              <span className="absolute left-1/2 bottom-[-15] h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </span>
+                <span className="text-white flex flex-col items-center">
+                {text}
+                <span className="absolute left-1/2 top-full mt-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                </span>
             </Link>
           ))}
         </div>
@@ -58,10 +58,10 @@ export default function Navbar() {
         <div className="hidden lg:flex gap-32 text-white items-center">
           {['Gallery', 'Catering', 'Contact'].map((text) => (
             <Link key={text} href={`/${text.toLowerCase()}`} className="relative group">
-              <span className="text-white">
+                <span className="text-white flex flex-col items-center">
                 {text}
-                <span className="absolute left-1/2 bottom-[-15] h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0" />
-              </span>
+                <span className="absolute left-1/2 top-full mt-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                </span>
             </Link>
           ))}
         </div>
