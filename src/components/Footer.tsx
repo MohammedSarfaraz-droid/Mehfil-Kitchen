@@ -21,7 +21,7 @@ export const Footer = () => {
                         <div className="flex flex-col pb-2">
                             <h2 className="text-lg font-semibold text-white mb-4">Quick Links</h2>
                         </div>
-                        <ul className=' font-thin text-sm text-white space-y-1'>
+                        <ul className=' font-thin text-sm text-white space-y-2 sm:space-y-1'>
                             <li>
                                 <Link href="/">Home</Link>
                             </li>
