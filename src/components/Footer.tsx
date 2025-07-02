@@ -21,7 +21,7 @@ export const Footer = () => {
                         <div className="flex flex-col pb-2">
                             <h2 className="text-lg font-semibold text-white mb-4">Quick Links</h2>
                         </div>
-                        <ul className='ml-4 font-thin text-sm text-white space-y-2'>
+                        <ul className='ml-4 font-thin text-sm text-white space-y-1'>
                             <li>
                                 <Link href="/">Home</Link>
                             </li>
@@ -30,6 +30,12 @@ export const Footer = () => {
                             </li>
                             <li>
                                 <Link href="/menu">Menu</Link>
+                            </li>
+                            <li>
+                                <Link href="/gallery">Gallery</Link>
+                            </li>
+                            <li>
+                                <Link href="/catering">Catering</Link>
                             </li>
                             <li>
                                 <Link href="/contact">Contact</Link>
