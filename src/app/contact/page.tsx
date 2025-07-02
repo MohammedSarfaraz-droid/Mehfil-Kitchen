@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             </section>
             <ContactUs />
             <Footer />
+            <BackToTop/>
         </>
     );
 }

@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import { Footer } from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import Menu from "@/components/Menu";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Menu />
       <Testimonials />
       <Footer />
+      <BackToTop/>
     </>
   );
 }

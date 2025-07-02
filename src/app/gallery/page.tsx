@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Gallery from "@/components/Gallery";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
     </section>
     <Gallery/>
       <Footer />
+      <BackToTop/>
     </>
   );
 }

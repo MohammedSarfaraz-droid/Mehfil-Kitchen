@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import About from "@/components/About";
 import { Footer } from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <About />
       <Testimonials />
       <Footer />
+      <BackToTop/>
     </>
   );
 }

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Services from "@/components/Services";
 import { Footer } from "@/components/Footer";
 import CateringForm from "@/components/CateringForm";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Services />
       <CateringForm/>
       <Footer />
+      <BackToTop/>
     </>
   );
 }
