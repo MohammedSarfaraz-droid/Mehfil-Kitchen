@@ -13,7 +13,7 @@ export default function CateringForm() {
         message: ''
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -21,7 +21,7 @@ export default function CateringForm() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         // Handle form submission
         console.log('Form submitted:', formData);
