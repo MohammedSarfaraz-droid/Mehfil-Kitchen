@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* Logo Center (Desktop) */}
         <div className="hidden lg:block">
             <Link href="#">
-            <Image src="/logo.png" alt="Logo" width={100} height={40} priority quality={100} />
+            <Image src="/logo.png" alt="Logo" width={120} height={60} priority quality={100} />
             </Link>
         </div>
 
