@@ -241,7 +241,7 @@ export default function MenuSection() {
                                     {/* Order Now Button */}
                                     <motion.div layout>
                                         <Link
-                                            href={`/checkout?item=${encodeURIComponent(item.title)}`}
+                                            href="#"
                                             className="inline-block text-sm md:text-base font-semibold text-black px-6 md:px-10 py-3 md:py-4 border-2 border-[#1a3c34] rounded transition-all duration-300 hover:bg-[#1a3c34] hover:text-white mb-6"
                                         >
                                             Order Now!
