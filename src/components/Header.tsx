@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-1 md:py-2 ">
         {/* Logo Left (Mobile) */}
         <div className="lg:hidden">
-            <Link href="#" passHref>
+            <Link href="/" passHref>
             <Image src="/logo.png" alt="Logo" width={100} height={40} />
             </Link>
         </div>
@@ -49,7 +49,7 @@ export default function Navbar() {
 
         {/* Logo Center (Desktop) */}
         <div className="hidden lg:block">
-            <Link href="#">
+            <Link href="/">
             <Image src="/logo.png" alt="Logo" width={120} height={60} priority quality={100} />
             </Link>
         </div>
