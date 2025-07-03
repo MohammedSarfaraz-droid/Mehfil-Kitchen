@@ -103,7 +103,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Copyright - Right Side */}
-                    <p className='order-2 md:order-1 text-sm'>© 2025 Mehfil Kitchen. All rights reserved.</p>
+                    <p className='order-2 md:order-1 text-sm'>© 2025 Mehfil Kitchen. All Rights Reserved.</p>
                 </div>
             </div>
         </section>
