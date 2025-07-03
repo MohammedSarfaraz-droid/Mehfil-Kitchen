@@ -81,7 +81,7 @@ export const Footer = () => {
                         </a>
 
                         {/* Instagram */}
-                        <a href="#" className='flex items-center justify-center w-10 h-10 rounded-full bg-white bg-opacity-15 hover:bg-[#1a3c34] transition-all duration-300'>
+                        <a href="https://www.instagram.com/kitchen.mehfil/?igsh=ejNmNzJkbG56bmxj#" className='flex items-center justify-center w-10 h-10 rounded-full bg-white bg-opacity-15 hover:bg-[#1a3c34] transition-all duration-300'>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='text-white'>
                                 <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM12 15.5C13.9 15.5 15.5 13.9 15.5 12C15.5 10.1 13.9 8.5 12 8.5C10.1 8.5 8.5 10.1 8.5 12C8.5 13.9 10.1 15.5 12 15.5ZM17.5 6.5C16.7 6.5 16 7.2 16 8C16 8.8 16.7 9.5 17.5 9.5C18.3 9.5 19 8.8 19 8C19 7.2 18.3 6.5 17.5 6.5Z" fill="currentColor" />
                             </svg>
