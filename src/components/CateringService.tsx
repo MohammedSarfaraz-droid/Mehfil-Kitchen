@@ -37,10 +37,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'birthday': {
     title: 'Birthday Catering',
     heroSubtitle: 'Celebrate your special day with authentic Hyderabadi flavors',
-    heroImage: '/birthday-hero.JPG',
+    heroImage: 'birthday-hero.JPG',
     introTitle: 'Unforgettable Birthday Celebrations',
     introText: 'Make your birthday memorable with our carefully curated menus featuring the best of Hyderabadi cuisine. From kid-friendly options to sophisticated adult gatherings, we tailor our services to your needs.',
-    introImage: '/birthday-intro.JPG',
+    introImage: 'birthday-intro.JPG',
     features: [
       {
         title: "Custom Birthday Menus",
@@ -71,10 +71,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'wedding': {
     title: 'Wedding Catering',
     heroSubtitle: 'Making your special day truly memorable with royal Hyderabadi cuisine',
-    heroImage: '/wedding-hero.JPG',
+    heroImage: 'wedding-hero.JPG',
     introTitle: 'Exquisite Wedding Catering',
     introText: 'Your wedding day deserves nothing but perfection. Our Hyderabadi wedding catering brings generations of culinary tradition to your celebration, with dishes prepared using authentic recipes and the finest ingredients.',
-    introImage: '/wedding-intro.JPG',
+    introImage: 'wedding-intro.JPG',
     features: [
       {
         title: "Royal Wedding Menus",
@@ -105,10 +105,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'party': {
     title: 'Party Orders',
     heroSubtitle: 'Flavorful gatherings with our signature party menus',
-    heroImage: '/party-hero.JPG',
+    heroImage: 'party-hero.JPG',
     introTitle: 'The Perfect Party Food',
     introText: 'Host unforgettable parties with our crowd-pleasing Hyderabadi dishes. Whether you need appetizers for 20 or a full buffet for 200, we provide fresh, flavorful options that will impress your guests.',
-    introImage: '/party-intro.JPG',
+    introImage: 'party-intro.JPG',
     features: [
       {
         title: "Crowd-Pleasing Favorites",
@@ -139,10 +139,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'event': {
     title: 'Event Catering',
     heroSubtitle: 'Professional catering for corporate and social events',
-    heroImage: '/event-hero.JPG',
+    heroImage: 'event-hero.JPG',
     introTitle: 'Impeccable Event Catering',
     introText: 'From corporate galas to charity fundraisers, our event catering delivers consistent quality and presentation. We handle every detail so you can focus on your guests and the occasion.',
-    introImage: '/event-intro.JPG',
+    introImage: 'event-intro.JPG',
     features: [
       {
         title: "Custom Event Packages",
@@ -173,10 +173,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'corporate': {
     title: 'Corporate Meals',
     heroSubtitle: 'Delight your team with professionally prepared meals',
-    heroImage: '/corporate-hero.JPG',
+    heroImage: 'corporate-hero.JPG',
     introTitle: 'Business Dining Solutions',
     introText: 'Impress clients or reward your team with meals that deliver comfort, quality, and authentic Hyderabadi spice. Our corporate catering is designed for business settings with professional presentation and timely delivery.',
-    introImage: '/corporate-intro.JPG',
+    introImage: 'corporate-intro.JPG',
     features: [
       {
         title: "Office Lunch Programs",
@@ -207,10 +207,10 @@ const serviceData: Record<ServiceKey, ServiceData> = {
   'ondemand': {
     title: 'On-Demand Orders',
     heroSubtitle: 'Freshly prepared meals at your convenience',
-    heroImage: '/ondemand-hero.JPG',
+    heroImage: 'ondemand-hero.JPG',
     introTitle: 'Quality Meals When You Need Them',
     introText: 'For those times when you need great food without the fuss of cooking or planning. Our on-demand service brings authentic Hyderabadi flavors to your door or ready for quick pickup.',
-    introImage: '/ondemand-intro.JPG',
+    introImage: 'ondemand-intro.JPG',
     features: [
       {
         title: "Quick Turnaround",
