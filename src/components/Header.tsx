@@ -27,12 +27,12 @@ export default function Navbar() {
         {/* Logo Left (Mobile) */}
         <div className="lg:hidden">
             <Link href="/" passHref>
-            <Image src="/logo.png" alt="Logo" width={100} height={40} />
+            <Image src="/logo2.png" alt="Logo" width={100} height={40} />
             </Link>
         </div>
 
         {/* Left Links */}
-        <div className="hidden lg:flex gap-32 text-white items-center">
+        <div className="hidden lg:flex gap-36 text-white items-center">
           {['Home', 'About', 'Menu'].map((text) => (
             <Link
               key={text}
@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* Logo Center (Desktop) */}
         <div className="hidden lg:block">
             <Link href="/">
-            <Image src="/logo.png" alt="Logo" width={120} height={60} priority quality={100} />
+            <Image src="/logo2.png" alt="Logo" width={120} height={60} priority quality={100} />
             </Link>
         </div>
 

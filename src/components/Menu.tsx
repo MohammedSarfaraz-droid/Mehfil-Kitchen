@@ -128,28 +128,44 @@ const menuItems = [
         title: "Snack Combo",
         price: "5.00",
         image: "/snack-combo.png",
-        categories: "",
+        categories: "snacks",
         description: "Freshly made snacks including Samosa, Mirchi, and Chai perfect for Evenings.",
+    },
+    {
+        title: "Mutton Biryani Family Pack",
+        price: "59.99",
+        image: "/hyderabadi-mutton-dum-biryani.png",
+        categories: "family pack",
+        description: "1 Family size Mutton Biryani - Quarter tray 1 Chicken 65, Mirchi ka Salan, Raita, Gulab Jamoon.",
+    },
+    {
+        title: "Chicken Biryani Family Pack",
+        price: "44.99",
+        image: "/hyderabadi-chicken-dum-biryani.png",
+        categories: "family pack",
+        description: "1 Family size Chicken Biryani - Quarter tray 1 Chicken 65, Mirchi ka Salan, Raita, Gulab Jamoon.",
     },
     // Add more items...
 ];
 
 const filters = [
-    { label: "All", value: "*" },
-    { label: "Chicken", value: "chicken" },
+    { label: "Family Pack", value: "family pack" },
     { label: "Mutton", value: "mutton" },
+    { label: "Chicken", value: "chicken" },
     { label: "Beef", value: "beef" },
     { label: "Seafood", value: "seafood" },
     { label: "Rice", value: "rice" },
+    { label: "Snacks", value: "snacks" },
 ];
 
 
 export default function MenuSection() {
-    const [activeFilter, setActiveFilter] = useState("*");
+    const [activeFilter, setActiveFilter] = useState("family pack");
 
-    const filteredItems = activeFilter === "*"
-        ? menuItems
-        : menuItems.filter(item => item.categories.includes(activeFilter));
+    const filteredItems = menuItems.filter(item =>
+        item.categories.includes(activeFilter)
+    );
+    
 
     return (
         <section className="w-full py-16 px-4">
