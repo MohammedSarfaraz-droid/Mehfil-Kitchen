@@ -197,7 +197,7 @@ export default function MenuSection() {
 
                 {/* Improved Animated Menu Grid */}
                 <div className="flex justify-center">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-14 justify-items-center max-w-fit">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-14 justify-items-center max-w-fit items-stretch">
                         <AnimatePresence mode="wait">
                             {filteredItems.map((item) => (
                                 <motion.div
@@ -219,7 +219,7 @@ export default function MenuSection() {
                                     }}
                                     transition={{ duration: 0.3 }}
                                     layout // This enables layout animations
-                                    className="w-full max-w-[340px] mb-4 md:mb-8"
+                                    className="w-full max-w-[340px] mb-4 md:mb-8 flex flex-col justify-between h-full"
                                 >
                                     {/* Image with price tag */}
                                     <motion.div
