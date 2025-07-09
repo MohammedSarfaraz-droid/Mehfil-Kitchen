@@ -108,7 +108,7 @@ export default function GallerySection() {
                                 />
                             </div>
                             <div className="flex gap-4">
-                                <div className="w-[360px] h-[327px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                                <div className="w-[360px] h-[342px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                                     <Image
                                         src={images[5]}
                                         alt="Gallery image"
@@ -117,7 +117,7 @@ export default function GallerySection() {
                                         sizes="360px"
                                     />
                                 </div>
-                                <div className="w-[261px] h-[327px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                                <div className="w-[261px] h-[342px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                                     <Image
                                         src={images[6]}
                                         alt="Gallery image"
