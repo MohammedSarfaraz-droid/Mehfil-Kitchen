@@ -10,9 +10,9 @@ export default function HeroSection() {
   </div>
 
   {/* Mobile Banner (below lg) */}
-  <div className="block lg:hidden w-full h-[60vh] bg-[url('/banner2.jpeg')] bg-cover bg-center relative">
+  <div className="block  lg:hidden w-full h-[60vh] bg-[url('/banner2.jpeg')] bg-cover bg-center relative">
     {/* Zigzag at bottom of mobile banner */}
-    <div className="absolute bottom-[-1px] left-0 w-full h-[20px] bg-[url('/zigzag.svg')] bg-cover bg-no-repeat z-[1] rotate-180" />
+    <div className="absolute   bottom-[-1px] left-0 w-full h-[20px] bg-[url('/zigzag.svg')] bg-cover bg-no-repeat z-[1] rotate-180" />
   </div>
 </section>
   );
