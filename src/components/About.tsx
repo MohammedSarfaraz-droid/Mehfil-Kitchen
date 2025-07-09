@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 export default function AboutSection() {
     return (
-        <section className="w-full pt-16 pb-8 px-4">
+        <section className="w-full pt-8 pb-4 px-4">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
 
                 {/* Left Content */}
                 <div className="md:w-1/2 text-center">
-                    <h2 className="text-[36px] font-semibold mb-6 text-gray-800">
+                    <h2 className="text-[33px] sm:text-[36px] font-semibold mb-6 text-gray-800">
                         About Mehfil Kitchen
                     </h2>
                     <div className="text-[16px] text-gray-700 space-y-2 leading-relaxed">
@@ -27,9 +27,9 @@ export default function AboutSection() {
 
                 {/* Right Image with Rotation */}
                 <div className="md:w-1/2 flex justify-center items-center overflow-hidden">
-                    <div className="w-72 sm:w-72 md:w-[400px] aspect-square rounded-full overflow-hidden relative animate-[spin_20s_linear_infinite]">
+                    <div className="w-72 sm:w-72 md:w-[400px] aspect-square  overflow-hidden relative animate-[spin_20s_linear_infinite]">
                         <Image
-                            src="/about-biryani.png"
+                            src="/about.png"
                             alt="About Mehfil"
                             fill
                             className="object-contain"
