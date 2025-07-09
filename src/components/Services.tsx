@@ -76,7 +76,7 @@ export default function ServicesSection() {
             </div>
 
             <div className="relative w-full">
-                <div className="w-full h-[350px] sm:h-[600px] bg-[url('/services-banner.png')] bg-cover bg-center"></div>
+                <div className="w-full h-[350px] sm:h-[650px] bg-[url('/services-banner.png')] bg-cover bg-center"></div>
                 <div className="absolute top-[-1px] left-0 w-full h-[20px] bg-[url('/zigzag.svg')] bg-cover bg-no-repeat z-[1]"></div>
                 <div className="absolute bottom-[-1px] left-0 w-full h-[20px] bg-[url('/zigzag.svg')] bg-cover bg-no-repeat z-[1] rotate-180"></div>    
             </div>
