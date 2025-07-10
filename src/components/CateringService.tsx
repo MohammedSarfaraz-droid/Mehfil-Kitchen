@@ -411,29 +411,29 @@ const ServicePage: React.FC<ServicePageProps> = ({ service }) => {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-[#1a3c34] mb-12 text-center">
-        {currentService.title} Gallery
+            {currentService.title} Gallery
           </h2>
 
           {/* Keep original grid structure but adjust for 3 images */}
           <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 max-w-6xl mx-auto">
-        {currentService.galleryImages.map((image, index) => (
-          <div key={index} className="relative aspect-square rounded-lg overflow-hidden group">
-            <Image
-          src={`/${image}`}
-          alt={`${currentService.title} example ${index + 1}`}
-          fill
-          className="object-cover transition-transform group-hover:scale-105"
-            />
-          </div>
-        ))}
+            {currentService.galleryImages.map((image, index) => (
+              <div key={index} className="relative aspect-square rounded-lg overflow-hidden group">
+                <Image
+                  src={`/${image}`}
+                  alt={`${currentService.title} example ${index + 1}`}
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
 
           <div className="flex justify-center mt-10">
-        <Link href="/gallery">
-          <button className="bg-[#1a3c34] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#122822] transition-colors">
-            Explore Gallery
-          </button>
-        </Link>
+            <Link href="/gallery">
+              <button className="bg-[#1a3c34] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#122822] transition-colors">
+                Explore Gallery
+              </button>
+            </Link>
           </div>
         </div>
       </section>

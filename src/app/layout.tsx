@@ -1,6 +1,7 @@
 import './globals.css'
 import { Josefin_Sans } from 'next/font/google'
 import Script from 'next/script' // ✅ Use only in <body>, no "use client" here
+import { Toaster } from 'react-hot-toast';
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
         {children}
+        <Toaster />
       </body>
     </html>
   )

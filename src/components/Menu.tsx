@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+// Update the import path below if your cartStore file is in a different location
+import { useCartStore, type MenuItem } from "./store/cartStore";
+import toast from 'react-hot-toast';
 
-const menuItems = [
+const menuItems: MenuItem[] = [
     {
         title: "Hyderabadi Mutton Dum Biryani",
         price: "17.99",
@@ -145,7 +147,6 @@ const menuItems = [
         categories: "family pack",
         description: "1 Family size Chicken Biryani - Quarter tray 1 Chicken 65, Mirchi ka Salan, Raita, Gulab Jamoon.",
     },
-    // Add more items...
 ];
 
 const filters = [
@@ -158,14 +159,29 @@ const filters = [
     { label: "Snacks", value: "snacks" },
 ];
 
-
 export default function MenuSection() {
-    const [activeFilter, setActiveFilter] = useState("family pack");
+    const [activeFilter, setActiveFilter] = useState<string>("family pack");
+    const addItem = useCartStore((state) => state.addItem);
+
+    const cartItems = useCartStore((state) => state.items);
 
     const filteredItems = menuItems.filter(item =>
         item.categories.includes(activeFilter)
     );
-    
+
+    const handleAddToCart = (item: MenuItem) => {
+        addItem(item);
+        // Show success toast
+        toast.success(`${item.title} added to cart!`, {
+            duration: 1000,
+            position: 'top-right',
+            style: {
+                background: '#1a3c34',
+                color: 'white',
+                fontWeight: '500',
+            },
+        });
+    };
 
     return (
         <section className="w-full py-16 px-4">
@@ -195,80 +211,87 @@ export default function MenuSection() {
                     ))}
                 </div>
 
-                {/* Improved Animated Menu Grid */}
+                {/* Menu Grid */}
                 <div className="flex justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-14 justify-items-center max-w-fit items-stretch">
-                        <AnimatePresence mode="wait">
-                            {filteredItems.map((item) => (
-                                <motion.div
-                                    key={item.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: "spring",
-                                            stiffness: 100,
-                                            damping: 15
-                                        }
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                        y: -20,
-                                        transition: { duration: 0.2 }
-                                    }}
-                                    transition={{ duration: 0.3 }}
-                                    layout // This enables layout animations
-                                    className="w-full max-w-[340px] mb-4 md:mb-8 flex flex-col justify-between h-full"
-                                >
-                                    {/* Image with price tag */}
+                        <AnimatePresence>
+                            {filteredItems.map((item) => {
+                                // Check if item is in cart
+                                const isInCart = cartItems.some(cartItem => cartItem.title === item.title);
+
+                                return (
                                     <motion.div
-                                        className="relative flex justify-center"
+                                        key={item.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 100,
+                                                damping: 15
+                                            }
+                                        }}
+                                        exit={{
+                                            opacity: 0,
+                                            y: -20,
+                                            transition: { duration: 0.2 }
+                                        }}
                                         layout
+                                        className="w-full max-w-[340px] mb-4 md:mb-8 flex flex-col justify-between h-full"
                                     >
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            width={380}
-                                            height={373}
-                                            className="w-full h-auto max-w-[380px] rounded-[5%] object-cover"
-                                        />
-                                        <div className="absolute bottom-6 right-6 bg-white text-black font-semibold px-3 py-2 md:px-4 md:py-2 rounded shadow text-sm md:text-base">
-                                            ${item.price}
-                                        </div>
-                                    </motion.div>
-
-                                    {/* Title */}
-                                    <motion.h3
-                                        className="text-xl md:text-2xl font-semibold text-black mt-6 md:mt-9 mb-4"
-                                        layout
-                                    >
-                                        {item.title}
-                                    </motion.h3>
-
-                                    {/* Description */}
-                                    <motion.p
-                                        className="text-base leading-6 text-black mb-6 md:mb-8"
-                                        layout
-                                    >
-                                        {item.description}
-                                    </motion.p>
-
-                                    {/* Order Now Button */}
-                                    <motion.div layout>
-                                        <Link
-                                            href="#"
-                                            className="inline-block text-sm md:text-base font-semibold text-black px-6 md:px-10 py-3 md:py-4 border-2 border-[#1a3c34] rounded transition-all duration-300 hover:bg-[#1a3c34] hover:text-white mb-6"
+                                        {/* Image with price tag */}
+                                        <motion.div
+                                            className="relative flex justify-center"
+                                            layout
                                         >
-                                            Order Now!
-                                        </Link>
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                width={380}
+                                                height={373}
+                                                className="w-full h-auto max-w-[380px] rounded-[5%] object-cover"
+                                            />
+                                            <div className="absolute bottom-6 right-6 bg-white text-black font-semibold px-3 py-2 md:px-4 md:py-2 rounded shadow text-sm md:text-base">
+                                                ${item.price}
+                                            </div>
+                                        </motion.div>
+
+                                        {/* Title */}
+                                        <motion.h3
+                                            className="text-xl md:text-2xl font-semibold text-black mt-6 md:mt-9 mb-4"
+                                            layout
+                                        >
+                                            {item.title}
+                                        </motion.h3>
+
+                                        {/* Description */}
+                                        <motion.p
+                                            className="text-base leading-6 text-black mb-6 md:mb-8"
+                                            layout
+                                        >
+                                            {item.description}
+                                        </motion.p>
+
+                                        {/* Add to Cart Button */}
+                                        <motion.div layout>
+                                            <button
+                                                onClick={() => handleAddToCart(item)}
+                                                className={`inline-block text-sm md:text-base font-semibold px-6 md:px-10 py-3 md:py-4 border-2 rounded transition-all duration-300 mb-6 ${isInCart
+                                                        ? 'bg-[#1a3c34] text-white border-[#1a3c34]'
+                                                        : 'text-black border-[#1a3c34] hover:bg-[#1a3c34] hover:text-white'
+                                                    }`}
+                                            >
+                                                {isInCart ? 'Added to Cart' : 'Add to Cart'}
+                                            </button>
+                                        </motion.div>
                                     </motion.div>
-                                </motion.div>
-                            ))}
+                                );
+                            })}
                         </AnimatePresence>
                     </div>
                 </div>
             </div>
         </section>
     );
-}    
+}

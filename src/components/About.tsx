@@ -32,8 +32,11 @@ export default function AboutSection() {
                             src="/about.png"
                             alt="About Mehfil"
                             fill
+                            sizes="(max-width: 768px) 18rem, 400px" // sm: 18rem (w-72), md: 400px
+                            priority
                             className="object-contain"
                         />
+
                     </div>
                 </div>
 
