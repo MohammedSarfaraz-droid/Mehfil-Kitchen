@@ -27,7 +27,7 @@ export default function CartPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b to-[#f8f5f2] from-[#c5baaa] pt-20 sm:pt-24 lg:pt-28 pb-12">
+        <div className="min-h-screen bg-gradient-to-b to-[#f8f5f2] from-[#c5baaa] pt-28 sm:pt-32  pb-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header with back button */}
                 <div className="mb-8">
@@ -57,7 +57,7 @@ export default function CartPage() {
                                 <div key={item.id} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-all border border-[#f0e9e0] group">
                                     <div className="flex flex-col sm:flex-row gap-6">
                                         {/* Product Image */}
-                                        <div className="flex-shrink-0 relative overflow-hidden rounded-lg w-full sm:w-32 h-32">
+                                        <div className="flex-shrink-0 relative overflow-hidden rounded-lg w-full sm:w-32 h-64 sm:h-32">
                                             <Image
                                                 src={item.image}
                                                 alt={item.title}
@@ -123,7 +123,7 @@ export default function CartPage() {
 
                     {/* Right column - Order summary */}
                     <div className="lg:w-1/3">
-                        <div className="bg-white rounded-xl shadow-sm p-8 sticky top-8 border border-[#f0e9e0]">
+                        <div className="bg-white rounded-xl shadow-sm p-8 sticky top-[112px] border border-[#f0e9e0]">
                             <h3 className="text-2xl font-serif font-medium text-gray-800 mb-8 pb-4 border-b border-[#f0e9e0]">Order Summary</h3>
                             
                             <div className="space-y-4 mb-8">

@@ -24,7 +24,7 @@ export default function Navbar() {
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${scrolled ? 'bg-[#1a3c34]' : 'bg-transparent'
         }`}
     >
-      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-5 py-3 min-h-[120px] ">
+      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-5 py-3 min-h-[100px] ">
         {/* Logo Left (Mobile) */}
         <div className="lg:hidden">
           <Link href="/" passHref>
